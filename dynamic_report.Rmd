@@ -41,7 +41,7 @@ The purpose of this report is to analyse the trends of relevant advertisements. 
 
 ### What is the highest number of products/services in an advertisement?
 
-```{r echo=FALSE}
+```{r, echo=FALSE}
 library(tidyverse)
 
 csv_file <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vQcc0f2v0cXF-PM2BNc34h6GFF2lN2yMfnAy2Svfmi2V51CFOPZqJy6ANSFLJMvCQl98dDGaFNI2mat/pub?output=csv"
@@ -63,7 +63,7 @@ paste("The highest number of products/services in an advertisement is", max_no_o
 
 ### What is the mean number of products/services in an advertisement?
 
-```{r echo=FALSE}
+```{r, echo=FALSE}
 latest_data <- logged_data %>%
   rename(timestamp = 1,
          ad_platform = 2,
@@ -78,7 +78,7 @@ paste("The mean number of products/services in an advertisement is", mean_no_of_
 
 ### Relationship between Relevant Advertisements & Advertisement Platforms 
 
-```{r echo=FALSE}
+```{r, echo=FALSE}
 latest_data %>%
   ggplot() + 
   geom_bar(aes(x = ad_relevant, fill = ad_platform)) +
@@ -93,7 +93,7 @@ This bar chart shows the analysis between Relevant Advertisements and Advertisem
 
 ### Relationship between Relevant Advertisements & Advertisement Formats 
 
-```{r echo=FALSE}
+```{r, echo=FALSE}
 latest_data %>%
   ggplot() + 
   geom_bar(aes(x = ad_relevant, fill = ad_format)) +
