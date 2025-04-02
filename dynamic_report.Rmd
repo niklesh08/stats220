@@ -1,0 +1,110 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+```
+
+```{css}
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+h2 {
+  font-family: 'Big Shoulders';
+  color: #000000;
+  text-decoration: underline;
+  text-decoration-style: double;
+  padding: 20px 0px;
+}
+
+h3 {
+  font-family: 'Big Shoulders';
+  color: #000000;
+  padding: 10px 0px;
+}
+
+p {
+  font-family: 'Roboto';
+  color: #303030;
+}
+
+body {
+  background: rgba(0, 0, 255, 0.1);
+}
+```
+
+## Trends of Relevant Advertisements
+
+The purpose of this report is to analyse the trends of relevant advertisements. This will be done through the use of summary outputs and bar charts generated from variables such as the advertisement platform, advertisements, format, number of products in the advertisement, and whether the advertisement is relevant to the respondents. The data used in this report was collected from a Google form based on observational logging, where participants recorded their encounters with advertisements. There were 40 responses in total, all of which were self-reported. This form had a mixture of questions that generated numerical and categorical data.
+
+### What is the highest number of products/services in an advertisement?
+
+```{r, echo=FALSE}
+library(tidyverse)
+
+csv_file <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vQcc0f2v0cXF-PM2BNc34h6GFF2lN2yMfnAy2Svfmi2V51CFOPZqJy6ANSFLJMvCQl98dDGaFNI2mat/pub?output=csv"
+
+logged_data <- read_csv(csv_file)
+
+latest_data <- logged_data %>%
+  rename(timestamp = 1,
+         ad_platform = 2,
+         ad_format = 3,
+         no_of_products = 4,
+         ad_relevant = 5)
+
+max_no_of_products <- max((latest_data$no_of_products))
+
+paste("The highest number of products/services in an advertisement is", max_no_of_products)
+```
+
+
+### What is the mean number of products/services in an advertisement?
+
+```{r, echo=FALSE}
+latest_data <- logged_data %>%
+  rename(timestamp = 1,
+         ad_platform = 2,
+         ad_format = 3,
+         no_of_products = 4,
+         ad_relevant = 5)
+
+mean_no_of_products <- mean(latest_data$no_of_products) %>% signif(1)
+
+paste("The mean number of products/services in an advertisement is", mean_no_of_products, "(rounded to 1 significant figure)")
+```
+
+### Relationship between Relevant Advertisements & Advertisement Platforms 
+
+```{r, echo=FALSE}
+latest_data %>%
+  ggplot() + 
+  geom_bar(aes(x = ad_relevant, fill = ad_platform)) +
+  labs(title = "Different Platform, More Relevant Advertisments?",
+       subtitle = "Relationship between Relevant Advertisments and Advertisment Platforms",
+       x = "Advertisment Relevant",
+       y = "Number of Responses")
+```
+
+This bar chart shows the analysis between Relevant Advertisements and Advertisement Platforms. This enables us to see and consider trends and relationships between the 2 variables. For example, Does Instagram have a higher rate of Relevant Advertisements than other platforms? Does Facebook have a higher rate of Irrelevant Advertisements? We also need to consider other factors, such as which platform was used more and how it differed from the usage of other platforms, as this can provide biased data. 
+
+
+### Relationship between Relevant Advertisements & Advertisement Formats 
+
+```{r, echo=FALSE}
+latest_data %>%
+  ggplot() + 
+  geom_bar(aes(x = ad_relevant, fill = ad_format)) +
+  labs(title = "Relevant Advertisment = 'X' Format?",
+       subtitle = "Relationship between Relevant Advertisments and Advertisment Formats",
+       x = "Advertisment Relevant",
+       y = "Number of Responses")
+```
+
+This bar chart shows the analysis between Relevant Advertisements and Advertisement Formats. This enables us to see and consider trends and relationships between the 2 variables. For example, Are most Relevant Advertisements in the format of a Video? Are text-based Advertisements very rarely used for Relevant Advertisements? Once again, we need to consider other factors, such as which format/s are compatible with different platforms, and link this back to the usage of platforms, as this can provide biased data. 
+
+```{r file='exploration.R', eval=FALSE, echo=FALSE}
+```
+
