@@ -9,30 +9,7 @@ library(tidyverse)
 ```
 
 ```{css}
-@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-h2 {
-  font-family: 'Big Shoulders';
-  color: #000000;
-  text-decoration: underline;
-  text-decoration-style: double;
-  padding: 20px 0px;
-}
-
-h3 {
-  font-family: 'Big Shoulders';
-  color: #000000;
-  padding: 10px 0px;
-}
-
-p {
-  font-family: 'Roboto';
-  color: #303030;
-}
-
-body {
-  background: rgba(0, 0, 255, 0.1);
-}
 ```
 
 ## Trends of Relevant Advertisements
