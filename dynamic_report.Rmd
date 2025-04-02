@@ -37,7 +37,7 @@ body {
 
 ## Trends of Relevant Advertisements
 
-The purpose of this report is to analyse the trends of relevant advertisements. This will be done through the use of summary outputs and bar charts generated from variables such as the advertisement platform, advertisements, format, number of products in the advertisement, and whether the advertisement is relevant to the respondents. The data used in this report was collected from a Google form based on observational logging, where participants recorded their encounters with advertisements. There were 40 responses in total, all of which were self-reported. This form had a mixture of questions that generated numerical and categorical data.
+The purpose of this report is to analyse the trends of relevant advertisements. This will be done through the use of summary outputs and bar charts generated from variables such as the advertisement platform, advertisement format, number of products in the advertisement, and whether the advertisement is relevant to the respondents. The data used in this report was collected from a Google form based on observational logging, where participants recorded their encounters with advertisements. There were 40 responses in total, all of which were self-reported. This form had a mixture of questions that generated numerical and categorical data.
 
 ### What is the highest number of products/services in an advertisement?
 
