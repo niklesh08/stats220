@@ -80,6 +80,4 @@ latest_data %>%
 
 This bar chart shows the analysis between Relevant Advertisements and Advertisement Formats. This enables us to see and consider trends and relationships between the 2 variables. For example, Are most Relevant Advertisements in the format of a Video? Are text-based Advertisements very rarely used for Relevant Advertisements? Once again, we need to consider other factors, such as which format/s are compatible with different platforms, and link this back to the usage of platforms, as this can provide biased data. 
 
-```{r file='exploration.R', eval=FALSE, echo=FALSE}
-```
 
