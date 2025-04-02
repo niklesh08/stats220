@@ -5,6 +5,7 @@ output: html_fragment
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+library(tidyverse)
 
 ```
 
@@ -42,8 +43,6 @@ The purpose of this report is to analyse the trends of relevant advertisements. 
 ### What is the highest number of products/services in an advertisement?
 
 ```{r, echo=FALSE}
-library(tidyverse)
-
 csv_file <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vQcc0f2v0cXF-PM2BNc34h6GFF2lN2yMfnAy2Svfmi2V51CFOPZqJy6ANSFLJMvCQl98dDGaFNI2mat/pub?output=csv"
 
 logged_data <- read_csv(csv_file)
