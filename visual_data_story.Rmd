@@ -1,5 +1,5 @@
 ---
-title: Trends in Relevant Advertisements and Who is Bossing It
+title: Exploring Relevant Advertisements
 output: html_document
 ---
 
